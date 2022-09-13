@@ -34,11 +34,21 @@ function App() {
     )
   }
 
+  const date = new Date()
+  // console.log(date)
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
   return (
     <div className='app'>
       <div className="container">
-        <h1>< BiTaskX /> Powerlist</h1>
-
+        <h1>< BiTaskX /> Daily Practice Organizer</h1>
+        <div className="date">
+          <p>{days[date.getDay()]}</p>
+          <p>{date.getDate()},</p>
+          <p>{months[date.getMonth()]}</p>
+          <p>{date.getFullYear()}</p>
+        </div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-input">
