@@ -56,7 +56,7 @@ function App() {
             <input
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder='Enter a task'
+              placeholder='Todays Practice Tasks'
               type="text" />
           </div>
         </form>
@@ -68,6 +68,7 @@ function App() {
             </div>
           ))}
         </div>
+        <p className='length'>{(tasks < 1) ? 'You have no tasks' : `Tasks: ${tasks.length}`}</p>
       </div>
     </div>
   );
