@@ -12,7 +12,7 @@ function App() {
     const addTask = {
       id: Math.floor(Math.random() * 1000),
       text: input,
-      completed: false
+      done: false
     }
     setTasks([...tasks, addTask])
     setInput('')
@@ -25,11 +25,11 @@ function App() {
     console.log('task deleted')
   }
 
-  // toggle completed task
+  // toggle done task
   const toggleComplete = (id) => {
     setTasks(
       tasks.map(task => (
-        task.id === id ? { ...task, completed: !task.completed } : task
+        task.id === id ? { ...task, done: !task.done } : task
       ))
     )
   }
@@ -62,7 +62,7 @@ function App() {
         </form>
         <div>
           {tasks.map(task => (
-            <div className={`task-row ${task.completed ? 'completed' : ''}`} key={task.id} onDoubleClick={() => toggleComplete(task.id)} >
+            <div className={`task-row ${task.done ? 'done' : ''}`} key={task.id} onDoubleClick={() => toggleComplete(task.id)} >
               <p>{task.text} </p>
               <AiOutlineClose onClick={() => deleteTask(task.id)} className='icon' />
             </div>
